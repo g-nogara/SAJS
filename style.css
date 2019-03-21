@@ -7,12 +7,14 @@ div {
   }
   
   .image-section {
+    position: relative;
     display: flex;
     justify-content: center;
   }
   
   .section-style {
+    position: relative;
     margin-right: 500px;
     margin-left: 500px;
-    background-color: yellow;
+    background-color: gray;
   }
