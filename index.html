@@ -4,19 +4,18 @@
   <head>
     <title>A Loja</title>
     <link rel="stylesheet" href="style.css"/>
-    <script async src="./script.js"></script>
+    <script type=text/javaScript src="./script.js"></script>
   </head>
   <body>
-    <h1>Loja A</h1>
+    <h1>A Loja</h1>
     <form>
-      <input type="text" id="cnpj" inputmode="numeric" minlength="14" maxlength="18" placeholder="Insira aqui seu CPNJ" onclick="alert("Apenas Numeros")"/>
+      Insira seu CPNJ:<input type="text" id="cnpj" data-mask="00.000.000/0000-00" pattern=[0-9]{14} placeholder="Somente números">
+      Seu CNPJ é <p id="sInput"></p>
     </form>
-      <p>CNPJ: XX.XXX.XXX/YYYY-ZZ</p>
       <p> Endereço: Rua de Teste, 123 </p>
       <p> Telefone: 3223 - XXXX </p>
-      <p> Email: email@lojaA.com.br </p>
+      <p> Email: email@Aloja.com.br </p>
       <a href="127.0.0.1"> Acesso ao site </a>
-    <p id='date'></p>
     <div class="image-selection">
       <div class="section-style">
         <img src="https://source.unsplash.com/random/400x200" alt=""/>
