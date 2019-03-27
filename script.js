@@ -1,4 +1,7 @@
+var cnpjJS = "String";
 function sInput() {
-var input1 = prompt("digite seu CNPJ")
-return input1;
+var cnpjJS = document.getElementById('cnpj').value;
+console.log(cnpjJS);
+return cnpjJS;
 }
+console.log(cnpjJS);
