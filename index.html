@@ -8,11 +8,20 @@
   </head>
   <body>
     <h1>A Loja</h1>
-    <form>
-  CNPJ:
-  <input type="text" size="12" id="cnpj" />
-  <input type="submit" onclick="sInput();"/>
-</form>
+    <div class='TESTE'>
+      <form id='formCNPJ'>
+      <div>
+          <lable id='cnpjLabel' for='cnpj'>Digite seu CNPJ:</lable>
+          <input id='cnpj' type='text' maxlength='18'></input>
+      </div>
+      <div class='form-sub'>
+          <button id='subButton' type='button'>Visualize seu CNPJ!</button>
+      </div>
+      </form>
+      
+      <div>
+          <p id='result'></p></div>
+      </div>
       <p> Endereço: Rua de Teste, 123 </p>
       <p> Telefone: 3223 - XXXX </p>
       <p> Email: email@Aloja.com.br </p>
