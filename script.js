@@ -1,7 +1,13 @@
-var cnpjJS = "String";
-function sInput() {
-var cnpjJS = document.getElementById('cnpj').value;
-console.log(cnpjJS);
-return cnpjJS;
-}
-console.log(cnpjJS);
+function getUserName() {
+    var cnpj = document.getElementById('cnpj').value;
+    var result = document.getElementById('result');
+    
+    if (cnpj.length < 14 || cnpj.length > 18 ) {
+        result.textContent = "CNPJ deve conter entre 14 e 18 digitos";
+      
+    } else {
+        result.textContent = "Seu CNPJ é: " + cnpj;
+    }
+    }
+    var subButton = document.getElementById('subButton');
+    subButton.addEventListener('click', getUserName, false); 
