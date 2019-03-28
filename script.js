@@ -1,7 +1,7 @@
-document.getElementById('date').innerHTML = new Date().toDateString();
-var CNPJ = document.getElementById('usrInput').value;
-console.log(CNPJ); //Ver no log oq ta saindo
-function output(){
-    var input = CNPJ;
-alert(input);
+var cnpjJS = "String";
+function sInput() {
+var cnpjJS = document.getElementById('cnpj').value;
+console.log(cnpjJS);
+return cnpjJS;
 }
+console.log(cnpjJS);
