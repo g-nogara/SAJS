@@ -1,6 +1,6 @@
 body {
   text-align: center;
-  background-color: #696969;
+  background-color: rgba(0, 0, 0, 0.808);
 }
 div {
     margin-top: 15px;
@@ -24,5 +24,4 @@ div {
     position: relative;
     margin-right: 500px;
     margin-left: 500px;
-    background-color: gray;
   }
