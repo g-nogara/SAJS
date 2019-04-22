@@ -1,13 +1,12 @@
-function lclStg () {
-    let realCNPJ = document.getElementById('cnpj').value;
-    const result = document.getElementById('result');
+function loginCheck () {
+    const realLogin = document.getElementById('login').value;
+    const realPWD = document.getElementById('password').value;
 
-    if (cnpj.length < 14 || cnpj.length > 18 ) {
-        result.textContent = "CNPJ deve conter entre 14 e 18 digitos";
+    if (realLogin === "Admin" && realPWD === "senha" ) {
+        window.location.href = 'http://www.google.com';
     } 
     else {
-        window.localStorage.setItem('CNPJ', cnpj);
-        result.textContent = "CNPJ salvo com sucesso";
+        result.textContent = "Login/Senha Inválidos";
 }
-subButton = document.getElementById('subButton');
-subButton.addEventListener('click', lclStg, false); 
+botaoAcesso = document.getElementById('botaoAcesso');
+botaoAcesso.addEventListener('click', loginCheck, false); 

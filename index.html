@@ -2,35 +2,31 @@
 <html lang="pt-br">
     <meta charset=utf-8>
   <head>
-    <title>A Loja</title>
+    <title>Login</title>
     <link rel="stylesheet" href="style.css"/>
   </head>
   <body>
-    <h1>A Loja</h1>
-    <div class='TESTE'>
-      <form id='formCNPJ'>
-      <div>
-          <lable id='cnpjLabel' for='cnpj'>Digite seu CNPJ:</lable>
-          <input id='cnpj' type='text' maxlength='18'></input>
+    <h1>Login</h1>
+    <div>
+        <div class="image-selection">
+            <div class="section-style">
+              <img src="https://source.unsplash.com/random/400x200" alt=""/>
+              <p> Imagem aleatória para teste</p>
+            </div>
+          </div>
+      <div class="container">
+        <label for="uname"><b>Username</b></label>
+        <input type="text" placeholder="Enter Username" name="uname" required>
+    <p>
+        <label for="psw"><b>Password</b></label>
+        <input type="password" placeholder="Enter Password" name="psw" required>
+    </p>
+        <button type="submit">Login</button>
+        <label>
+          <input type="checkbox" name="remember"> Remember me
+        </label>
+        
       </div>
-      <div class='form-sub'>
-          <button id='subButton' type='button'>Salvar CNPJ</button>
-      </div>
-      </form>
-      
-      <div>
-          <p id='result'></p></div>
-      </div>
-      <p> Endereço: Rua de Teste, 123 </p>
-      <p> Telefone: 3223 - XXXX </p>
-      <p> Email: email@Aloja.com.br </p>
-      <a href="127.0.0.1"> Acesso ao site </a>
-    <div class="image-selection">
-      <div class="section-style">
-        <img src="https://source.unsplash.com/random/400x200" alt=""/>
-        <p> Imagem aleatória para teste</p>
-      </div>
-    </div>
   </body>
   <script type=text/javaScript src="./script.js"></script>
 </html>
