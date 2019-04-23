@@ -3,9 +3,13 @@ let itens = {
         this.codig = codig;
         this.quantidade = quantidade;
         this.valor = valor;
-        this.descibre = descibre;
+        this.describe = describe;
     }
 };
-botaoGravar = document.getElementById('btnGravar');
-botaoGravar.addEventListener('click', itens.inserir($("#codigo"),$("#quantidade"),$("#valor"),$("#describe")), false);
-botaoGravar.addEventListener('click', setDelay(console.log(itens.codig), 500), false);
+
+function gravar(){
+  let codigo = document.getElementById("codigo").value, quantidade = document.getElementById("quantidade").value,
+  valor = document.getElementById("valor").value, describe = document.getElementById("describe").value
+  itens.inserir(codigo, quantidade, valor, describe);
+  console.log(itens);
+}

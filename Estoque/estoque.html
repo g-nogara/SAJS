@@ -7,9 +7,10 @@
 </head>
 
 <body>
+
     <h1>Estoque</h1>
-    <div class="container">
-        <label for="codigo"><b>Código do Produto</b></label>
+    <div class="formulario">
+        <label for="codigo" id="labelCodigo"><b>Código do Produto</b></label>
         <input type="text" placeholder="Insira cód. produto" id="codigo" required>
         <p>
             <label for="valor"><b>Valor</b></label>
@@ -23,7 +24,7 @@
                 <label for="describe"><b>Descrição</b></label>
                 <input type="text" placeholder="Insira descrição do produto" id="describe" required>
             </p>
-        <button id="btnGravar" type="submit">Gravar</button>
+        <button onclick="gravar()" id="btnGravar" type="submit">Gravar</button>
         <script type="text/javaScript" src="./scriptEstoque.js"></script>
         <script type="text/javaScript" src="../jquery.js"></script>
 </body>
