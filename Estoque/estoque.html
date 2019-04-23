@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<meta charset=utf-8>
+
+<head>
+    <title>Estoque</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+
+<body>
+    <h1>Estoque</h1>
+    <div class="container">
+        <label for="codigo"><b>Código do Produto</b></label>
+        <input type="text" placeholder="Insira cód. produto" id="codigo" required>
+        <p>
+            <label for="valor"><b>Valor</b></label>
+            <input type="number" placeholder="Insira valor produto" id="valor" required>
+        </p>
+        <p>
+            <label for="quantidade"><b>Quantidade</b></label>
+            <input type="number" placeholder="Insira quantidade do produto" id="quantidade" required>
+        </p>
+        <p>
+                <label for="describe"><b>Descrição</b></label>
+                <input type="text" placeholder="Insira descrição do produto" id="describe" required>
+            </p>
+        <button id="btnGravar" type="submit">Gravar</button>
+        <script type="text/javaScript" src="./scriptEstoque.js"></script>
+        <script type="text/javaScript" src="../jquery.js"></script>
+</body>
