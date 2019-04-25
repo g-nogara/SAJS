@@ -3,7 +3,7 @@ let itens = {
         this.código = código;
         this.quantidade = quantidade;
         this.valor = valor;
-        this.describe = descrição;
+        this.describe = describe;
     }
 };
 let array2 = [];
@@ -15,8 +15,6 @@ function gravar(){
   console.log(itemJSON);
   console.log(itens);
   sessionStorage.setItem(itens.codig, itemJSON);
-  array2.push(itens.codig);
-  console.log(array2);
 
 };
 
