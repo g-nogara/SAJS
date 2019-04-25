@@ -1,9 +1,9 @@
 let itens = {
-    inserir: function (codig, quantidade, valor, describe) {
-        this.codig = codig;
+    inserir: function (código, quantidade, valor, describe) {
+        this.código = código;
         this.quantidade = quantidade;
         this.valor = valor;
-        this.describe = describe;
+        this.describe = descrição;
     }
 };
 let array2 = [];
@@ -21,7 +21,7 @@ function gravar(){
 };
 
 function recuperar(){
-  const ojb = sessionStorage.getItem(array2[parseInt(prompt("Informe o código do produto"))]);
+  const ojb = sessionStorage.getItem(parseInt(prompt("Informe o código do produto")));
   console.log(JSON.parse(ojb));
   document.getElementById("exibir").innerHTML+= ojb;
 
