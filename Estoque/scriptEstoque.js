@@ -1,6 +1,6 @@
 let itens = {
-    inserir: function (código, quantidade, valor, describe) {
-        this.código = código;
+    inserir: function (codig, quantidade, valor, describe) {
+        this.codig = codig;
         this.quantidade = quantidade;
         this.valor = valor;
         this.describe = describe;
@@ -15,6 +15,8 @@ function gravar(){
   console.log(itemJSON);
   console.log(itens);
   sessionStorage.setItem(itens.codig, itemJSON);
+  array2.push(itens.codig);
+  console.log(array2);
 
 };
 
