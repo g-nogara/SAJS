@@ -21,7 +21,7 @@ function gravar(){
 };
 
 function recuperar(){
-  const ojb = sessionStorage.getItem(array2[parseInt(prompt("Informe o código do produto"))]);
+  const ojb = sessionStorage.getItem(parseInt(prompt("Informe o código do produto")));
   console.log(JSON.parse(ojb));
   document.getElementById("exibir").innerHTML+= ojb;
 
