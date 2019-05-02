@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<meta charset=utf-8>
+
+
+    <title>Venda</title>
+    <link rel="stylesheet" href="../style.css">
+    </head>
+
+<body>
+
+    <h1>Nova Venda</h1>
+    <div class="formulario">
+        <label for="codigo" id="labelCodigo"><b>Código do Produto</b></label>
+        <input type="text" placeholder="Insira cód. produto da venda" id="codigo" required>
+        <p>
+            <label for="quantidade"><b>Quantidade</b></label>
+            <input type="number" placeholder="Insira a quantidade vendida" id="quantidade" required>
+        </p>
+        
+        <button onclick="vender()" id="btnVenda" type="submit">Gravar Venda</button>
+        <p id="exibir"></p>
+    </div>
+        <script type="text/javaScript" src="./scriptEstoque.js"></script>
+        <script type="text/javaScript" src="../jquery.js"></script>
+</body>
