@@ -18,14 +18,18 @@ function gravar(){
   array2.push(itens.codig);
   console.log(array2);
 
-};
+}
 
 function recuperar(){
-  const ojb = sessionStorage.getItem(parseInt(prompt("Informe o código do produto")));
-  console.log(JSON.parse(ojb));
-  document.getElementById("codigo").innterHTML += ojb;
-  document.getElementById("quantidade").innterHTML+= ojb.quantidade;
-  document.getElementById("valor").innterHTML+= ojb.valor;
-  document.getElementById("desc").innterHTML= 1236512 + 1261278;
+  let ojb = sessionStorage.getItem(parseInt(prompt("Informe o código do produto")));
+  ojb = JSON.parse(ojb);
+  document.getElementById("codigo1").innerHTML = ojb.codig;
+  document.getElementById("quantidade1").innerHTML = ojb.quantidade;
+  document.getElementById("valor1").innerHTML = ojb.valor;
+  document.getElementById("desc1").innerHTML  = ojb.describe;
+  let linhas = document.getElementById("TESTE1!").getElementsByTagName("tr").length;
+  let table = document.getElementById("TESTE1!");
+  let tempRow = table.insertRow(1);
+  tempRow.insertCell(0) = ojb.codig;
 
-};
+}

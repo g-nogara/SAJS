@@ -24,14 +24,24 @@
                 <label for="describe"><b>Descrição</b></label>
                 <input type="text" placeholder="Insira descrição do produto" id="describe" required>
             </p>
+      </div>
         <button onclick="gravar()" id="btnGravar" type="submit">Gravar</button>
         <button onclick="recuperar()" type="submit">Recuperar dados</button>
-      <div id="tabela">
-        <p id="codigo"></p>
-        <p id="quantidade"></p>
-        <p id="valor"></p>
-        <p id="desc"></p>
-      </div>
+<table id="tabelaEstoque">
+  <tr>
+        <th id="codigoTabela">Código</th>
+        <th id="quantidadeTabela">Quantidade</th>
+        <th id="valorTabela">Valor</th>
+        <th id="descTabela">Descrição</th>
+  </tr>
+  <tr id="TESTE1!">
+    <th id="codigo1">
+    <th id="quantidade1">
+    <th id="valor1">
+    <th id="desc1">    
+  </tr>
+
+</table>
         <script type="text/javaScript" src="./scriptEstoque.js"></script>
         <script type="text/javaScript" src="../jquery.js"></script>
 </body>
