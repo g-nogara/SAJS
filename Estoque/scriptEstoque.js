@@ -23,6 +23,9 @@ function gravar(){
 function recuperar(){
   const ojb = sessionStorage.getItem(parseInt(prompt("Informe o código do produto")));
   console.log(JSON.parse(ojb));
-  document.getElementById("exibir").innerHTML+= ojb;
+  document.getElementById("codigo").innterHTML += ojb;
+  document.getElementById("quantidade").innterHTML+= ojb.quantidade;
+  document.getElementById("valor").innterHTML+= ojb.valor;
+  document.getElementById("desc").innterHTML= 1236512 + 1261278;
 
 };
