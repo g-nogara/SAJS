@@ -8,16 +8,16 @@ let itens = {
 };
 let array2 = [];
 function gravar(){
-  const codigo = document.getElementById("codigo").value, quantidade = document.getElementById("quantidade").value,
-  valor = document.getElementById("valor").value, describe = document.getElementById("describe").value
-  itens.inserir(codigo, quantidade, valor, describe);
+  getElements();
   const itemJSON = JSON.stringify(itens);
-  console.log(itemJSON);
-  console.log(itens);
   sessionStorage.setItem(itens.codig, itemJSON);
   array2.push(itens.codig);
-  console.log(array2);
 
+
+  function getElements() {
+    const codigo = document.getElementById("codigo").value, quantidade = document.getElementById("quantidade").value, valor = document.getElementById("valor").value, describe = document.getElementById("describe").value;
+    itens.inserir(codigo, quantidade, valor, describe);
+  }
 };
 
 function recuperar(){
