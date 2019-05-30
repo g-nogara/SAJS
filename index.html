@@ -3,30 +3,43 @@
 <meta charset=utf-8>
 
 <head>
-  <title>Login</title>
-  <link rel="stylesheet" href="style.css"/>
+  <title>Gerenciamento</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
 
-<body>
-  <h1>Login</h1>
-  <div>
+<body style="background-color: slategray">
+  <div class="jumbotron">
+  <div class="container">
+      <h1>Menu</h1>
     <div class="image-selection">
       <div class="section-style">
-        <img src="https://source.unsplash.com/random/400x200" alt="" />
-        <p> Imagem aleatória para teste</p>
+        <img src="https://source.unsplash.com/random/400x200" height="100" width="200" />
+        <hr class="my-4">
+        <p> Acesso às funções e informações da loja</p>
+
+            <nav>
+              <ul class="nav justify-content-center">
+                <li class="nav-item">
+                  <a class="nav-link" href="./Estoque/estoque.html">Estoque</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="./Vendas/Vendas.html">Vendas</a>
+                </li>
+              </ul>
+            </nav>
+
+      </div>
       </div>
     </div>
+  </div>
+
     <div class="container">
-      <label for="uname"><b>Username</b></label>
-      <input type="text" placeholder="Enter Username" name="uname" required>
-      <p>
-        <label for="psw"><b>Password</b></label>
-        <input type="password" placeholder="Enter Password" name="psw" required>
-      </p>
-      <button type="submit">Login</button>
-      <label>
-        <input type="checkbox" name="remember"> Remember me
-      </label>
+      Nome da Loja<br>
+      CPNJ: 00.249.993/0001-30<br>
+      Endereço: Rua de Exemplo, 123<br>
+      Telefone: (48) 5555-5555<br>
+      E-Mail: <a href="mailto:exemplo@sualoja.com">exemplo@sualoja.com</a><br>
+      Site: <a href="127.0.0.1">Acessse nosso site</a>
       <div>
         <p id='result'></p>
       </div>
