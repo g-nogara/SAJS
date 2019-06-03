@@ -1,35 +1,28 @@
 let itens = {
-  inserir: function (codig, quantidade, valor, describe) {
-    this.codig = codig;
-    this.quantidade = quantidade;
-    this.valor = valor;
-    this.describe = describe;
-  }
+    inserir: function (codig, quantidade, valor, describe) {
+        this.codig = codig;
+        this.quantidade = quantidade;
+        this.valor = valor;
+        this.describe = describe;
+    }
 };
-function gravar() {
-  const arrayItens = [];
-  const { codigo, quantidade, valor, describe } = getItemValues();
-  itens.inserir(codigo, quantidade, valor, describe);
+let array2 = [];
+function gravar(){
+  getElements();
   const itemJSON = JSON.stringify(itens);
   sessionStorage.setItem(itens.codig, itemJSON);
-  arrayItens.push(itens.codig);
-  sessionStorage.setItem("item",arrayItens);
-}
+  array2.push(itens.codig);
 
-    function getItemValues() {
-    const codigo = document.getElementById("codigo").value, 
-    quantidade = document.getElementById("quantidade").value, 
-    valor = document.getElementById("valor").value, 
-    describe = document.getElementById("describe").value;
-    return { codigo, quantidade, valor, describe };
-    }
 
-function recuperar() {
-  let obj = sessionStorage.getItem(parseInt(prompt("Informe o código do produto")));
-  obj = JSON.parse(obj);
-  //insereTabela(obj);
-}
+  function getElements() {
+    const codigo = document.getElementById("codigo").value, quantidade = document.getElementById("quantidade").value, valor = document.getElementById("valor").value, describe = document.getElementById("describe").value;
+    itens.inserir(codigo, quantidade, valor, describe);
+  }
+};
 
-function insereTabela(objeto){
-  
-}
+function recuperar(){
+  const ojb = sessionStorage.getItem(parseInt(prompt("Informe o código do produto")));
+  console.log(JSON.parse(ojb));
+  document.getElementById("exibir").innerHTML+= ojb;
+
+};
