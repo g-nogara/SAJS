@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<meta charset="UTF-8">
+
+<head>
+    <title>Cadastro de Funcionários</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+
+<body style="background-color: slategray;">
+
+    <div class="jumbotron">
+        <h1 class="display-4">Cadastro de Funcionários</h1>
+        <p class="lead">Registre um novo funcionário no banco de dados</p>
+        <hr class="my-4">
+    </div>
+
+
+    <div class="container">
+    <div class="form-group">
+        <label for="nome" id="labelName"><b>Nome do Funcionário</b></label>
+        <input type="text" class="form-control" placeholder="Insira nome do funcionário" id="nome" required>
+        <p>
+            <label for="codigo"><b>Código</b></label>
+            <input type="number" class="form-control" placeholder="Insira Código do funcionário" id="codigo" required>
+        </p>
+        <p>
+            <label for="cargo"><b>Cargo</b></label>
+            <input type="text" class="form-control" placeholder="Insira cargo do funcionario" id="cargo" required>
+        </p>
+        <p>
+                <label for="admissao"><b>Data de admissão</b></label>
+                <input type="date" class="form-control" id="admissao" required>
+            </p>
+        <button onclick="gravar()" id="btnGravar" type="submit" class="btn btn-primary btn-lg">Salvar</button>
+    </div>
+        <p id="exibir"></p>
+        <script type="text/javaScript" src="./scriptFunc.js"></script>
+</body>
