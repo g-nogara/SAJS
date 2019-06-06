@@ -3,23 +3,26 @@
 
 
     <title>Venda</title>
-    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     </head>
 
-<body>
+<body style="background-color: slategray">
 
-    <h1>Nova Venda</h1>
-    <div class="formulario">
+    <div class="jumbotron">
+    <h1 class="display-4">Vendas</h1>
+    <hr class="my-4">
+    <p class="lead"> Cadastro de novas vendas</p>
+    </div>
+    <div class="container">
+        <div class="form-group"></div>
         <label for="codigo" id="labelCodigo"><b>Código do Produto</b></label>
-        <input type="text" placeholder="Insira cód. produto da venda" id="codigo" required>
+        <input type="text" class="form-control" placeholder="Insira cód. produto da venda" id="codigo" required>
         <p>
             <label for="quantidade"><b>Quantidade</b></label>
-            <input type="number" placeholder="Insira a quantidade vendida" id="quantidade" required>
+            <input type="number" class="form-control" placeholder="Insira a quantidade vendida" id="quantidade" required>
         </p>
         
-        <button onclick="vender()" id="btnVenda" type="submit">Gravar Venda</button>
-        <p id="exibir"></p>
+        <button onclick="vender()" class="btn btn-primary" id="btnVenda" type="submit">Gravar Venda</button>
     </div>
         <script type="text/javaScript" src="./scriptEstoque.js"></script>
-        <script type="text/javaScript" src="../jquery.js"></script>
 </body>
