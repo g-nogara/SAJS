@@ -1,2 +1,5 @@
 
 *.zip
+/Cypress
+cypress.json
+jquery.js

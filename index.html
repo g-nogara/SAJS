@@ -3,37 +3,45 @@
 <meta charset=utf-8>
 
 <head>
-  <title>Gerenciamento</title>
+  <title>Atlas</title>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
 </head>
 
 <body style="background-color: slategray">
   <div class="jumbotron">
-  <div class="container">
-      <h1>Menu</h1>
-    <div class="image-selection">
-      <div class="section-style">
-        <img src="https://source.unsplash.com/random/400x200" height="100" width="200" />
+      <img src="./logo1.png" height="200" width="200" style="position: relative; top: -3em; left: -2em;"/><br>
+      <h1 class="display-4">Menu</h1>
         <hr class="my-4">
-        <p> Acesso às funções e informações da loja</p>
+        <p class="lead"> Acesso às funções e informações da loja</p>
 
-            <nav>
-              <ul class="nav justify-content-center">
-                <li class="nav-item">
-                  <a class="nav-link" href="./Estoque/estoque.html">Estoque</a>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" href="#">Acesso:</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+          
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                  <a class="nav-link" href="./Estoque/estoque.html"">Estoque <span class="sr-only">(current)</span></a>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item active">
                   <a class="nav-link" href="./Vendas/Vendas.html">Vendas</a>
                 </li>
-              </ul>
-            </nav>
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Relatórios
+                  </a>
+                  <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="#">Mensal</a>
+                    <a class="dropdown-item" href="#">Anual</a>
+                  </div>
+                </li>
 
-      </div>
-      </div>
-    </div>
   </div>
-
-    <div class="container">
+</div>
+    <div class="card text-center bg-light" style="width: 16rem; height: 14rem; position: absolute; margin-left: 40%; margin-right: 40%;">
       Nome da Loja<br>
       CPNJ: 00.249.993/0001-30<br>
       Endereço: Rua de Exemplo, 123<br>

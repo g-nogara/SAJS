@@ -25,3 +25,7 @@ div {
     margin-right: 500px;
     margin-left: 500px;
   }
+
+  table, th, td {
+    border: 1px solid black;
+  }
