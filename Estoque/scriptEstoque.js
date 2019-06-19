@@ -14,11 +14,11 @@ function gravar(){
   getElements();
   const novoItem = new Item(codigo.value, quantidade.value, valor.value, describe.value);
   const itemJSON = JSON.stringify(novoItem);
-  sessionStorage.setItem(novoItem.codigo, itemJSON);
+  localStorage.setItem("e" + novoItem.codigo, itemJSON);
 };
 
 function recuperarItem(){
-  const item = JSON.parse(sessionStorage.getItem(prompt("Informe o código do produto")));
+  const item = JSON.parse(localStorage.getItem("e" + prompt("Informe o código do produto")));
   getElements();
   codigo.value = item.codigo;
   quantidade.value = item.quantidade;
