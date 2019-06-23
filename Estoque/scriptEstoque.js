@@ -1,28 +1,27 @@
-let itens = {
-    inserir: function (codig, quantidade, valor, describe) {
-        this.codig = codig;
-        this.quantidade = quantidade;
-        this.valor = valor;
-        this.describe = describe;
-    }
-};
-let array2 = [];
+function Item(codig, quantidade, valor, describe){
+    this.codigo = codig;
+    this.quantidade = quantidade;
+    this.valor = valor;
+    this.describe = describe;
+}
+function getElements() {
+  var codigo = document.getElementById("codigo"), 
+  quantidade = document.getElementById("quantidade"), 
+  valor = document.getElementById("valor"), 
+  describe = document.getElementById("describe");
+}
 function gravar(){
   getElements();
-  const itemJSON = JSON.stringify(itens);
-  sessionStorage.setItem(itens.codig, itemJSON);
-  array2.push(itens.codig);
-
-
-  function getElements() {
-    const codigo = document.getElementById("codigo").value, quantidade = document.getElementById("quantidade").value, valor = document.getElementById("valor").value, describe = document.getElementById("describe").value;
-    itens.inserir(codigo, quantidade, valor, describe);
-  }
+  const novoItem = new Item(codigo.value, quantidade.value, valor.value, describe.value);
+  const itemJSON = JSON.stringify(novoItem);
+  localStorage.setItem("e" + novoItem.codigo, itemJSON);
 };
 
-function recuperar(){
-  const ojb = sessionStorage.getItem(parseInt(prompt("Informe o código do produto")));
-  console.log(JSON.parse(ojb));
-  document.getElementById("exibir").innerHTML+= ojb;
-
+function recuperarItem(){
+  const item = JSON.parse(localStorage.getItem("e" + prompt("Informe o código do produto")));
+  getElements();
+  codigo.value = item.codigo;
+  quantidade.value = item.quantidade;
+  valor.value = item.valor;
+  describe.value = item.describe;
 };
