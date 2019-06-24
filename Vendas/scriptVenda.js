@@ -27,7 +27,7 @@ function vender() {
     novaVenda = JSON.stringify(novaVenda);
     if (localStorage.getItem("vendas") == null) localStorage.setItem("vendas", [novaVenda])
     else {
-      tempArrayVendas = localStorage.getItem("vendas");
+      tempArrayVendas = JSON.parse(localStorage.getItem("vendas"));
       tempArrayVendas.push(novaVenda);
     }
   }
