@@ -12,27 +12,32 @@ function vender() {
 
   if (localStorage.length = 0) alert("Sem itens em estoque!");
   else {
-    var itemString = "", itemQuantidades = new Array();
+    var itemArray = new Array(), itemQuantidades = new Array();
     codigo = Array.from(codigo);
     quantidade = Array.from(quantidade);
+    setCodigoQuantidade();
+    let novaVenda = new Venda(funcionario, cliente, codigo, itemArray, itemQuantidades, new Date());
+    if (localStorage.getItem("vendas")) {
+      let arrayVenda = new Array();
+      arrayVenda.push(localStorage.getItem("vendas"));
+      arrayVenda.push(JSON.stringify(novaVenda));
+      localStorage.setItem("vendas", arrayVenda);      
+    }
+    else {
+      let arrayVenda = new Array();
+      arrayVenda.push(JSON.stringify(novaVenda));
+      localStorage.setItem("vendas", arrayVenda)
+    } 
+  }
+
+  function setCodigoQuantidade() {
     for (i = 0; i < codigo.length; i++) {
       codigo[i] = String(codigo[i].value);
       codigo[i] = codigo[i].padStart(3, "0");
       codigo[i] = "e" + codigo[i];
-      //Padrão armazenamento do estoque no localStorage, "e" seguido pelo código com 3 digitos.
-      itemQuantidades.push(quantidade[i].value)
-
       var itemObj = JSON.parse(localStorage.getItem(codigo[i]));
-      itemString += itemObj.describe + ", ";
-    }
-    let novaVenda = new Venda(funcionario, cliente, codigo, itemString, itemQuantidades, new Date());
-    novaVenda = JSON.stringify(novaVenda);
-    if (localStorage.getItem("vendas") == null) localStorage.setItem("vendas", [novaVenda])
-    else {
-      tempArrayVendas = JSON.parse(localStorage.getItem("vendas"));
-      tempArrayVendas.push(novaVenda);
-      JSON.stringify(tempArrayVendas);
-      sessionStorage.setItem("vendas", tempArrayVendas);
+      itemArray.push(itemObj.describe);
+      itemQuantidades.push(quantidade[i].value);
     }
   }
 }
