@@ -9,7 +9,7 @@ function gravar(){
   getElementsHTML();
   const novoFunc = new Funcionario (nome, codigo, cargo, admissao);
   const funcJSON = JSON.stringify(novoFunc);
-  sessionStorage.setItem(novoFunc.cod, funcJSON);
+  sessionStorage.setItem("f" + novoFunc.cod, funcJSON);
 
 
   function getElementsHTML() {

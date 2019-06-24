@@ -35,7 +35,7 @@
                 Consultas
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <a class="dropdown-item" href="#">Tabela de Produtos</a>
+                  <a class="dropdown-item" href="../Estoque/consultaEstoque.html">Tabela de Produtos</a>
                   <a class="dropdown-item" href="#">Clientes Cadastrados</a>
                   <a class="dropdown-item" href="#">Vendedores</a>
                 </div>
@@ -46,7 +46,7 @@
    
     
     <div class="jumbotron jumbotron-fluid">
-    <div class="container">
+        <div class="container">
         <h1 class="display-4">Estoque</h1>
         <p class="lead">Registro de produtos</p>
         <hr class="my-4">
@@ -54,6 +54,7 @@
         
             
       </div>
+    </div>
        
 
 
@@ -74,7 +75,7 @@
                 <input type="text" class="form-control" placeholder="Insira descrição do produto" id="describe" required>
             </p>
         <button onclick="gravar()" id="btnGravar" type="submit" class="btn btn-primary btn-lg">Gravar</button>
-        <button onclick="recuperarItem()" type="submit" class="btn btn-warning">Recuperar item</button>
+        <button onclick="recuperarItem()" type="submit" class="btn btn-outline-danger">Recuperar item</button>
     </div>
         <p id="exibir"></p>
         <script type="text/javaScript" src="./scriptEstoque.js"></script>

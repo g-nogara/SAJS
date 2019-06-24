@@ -35,7 +35,7 @@
                 Consultas
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <a class="dropdown-item" href="#">Tabela de Produtos</a>
+                  <a class="dropdown-item" href="../Estoque/consultaEstoque.html">Tabela de Produtos</a>
                   <a class="dropdown-item" href="#">Clientes Cadastrados</a>
                   <a class="dropdown-item" href="#">Vendedores</a>
                 </div>
@@ -44,23 +44,44 @@
         </div>
     </nav>
 
-    <div class="jumbotron">
-    <h1 class="display-4">Vendas</h1>
-    <hr class="my-4">
-    <p class="lead"> Cadastro de novas vendas</p>
+    <div class="jumbotron jumbotron-fluid">
+      <div class="container">
+        <h1 class="display-4">Vendas</h1>
+        <hr class="my-4">
+        <p class="lead">Cadastro de nova venda</p>
+      </div>
     </div>
+    
     <div class="container">
-        <div class="form-group"></div>
+      <div class="form-group">
+          <label for="codFuncionario"><b>Código do Funcionário</b></label>
+          <input type="text" class="form-control" placeholder="Insira código do funcionário" id="codFuncionario" required>
+
+          <label for="nomeCliente"><b>Nome do Cliente</b></label>
+          <input type="text" class="form-control" placeholder="Insira nome do cliente (opcional)" id="nomeCliente">
+<br>
+          <button onclick="adicionaCampos()" class="btn btn-sm btn-primary"><b>Adicionar campos de venda</b></button>
+      </div>
+    </div>
+
+    <hr>
+
+    <div class="container" id="containerCampos">
+        <div class="form-group" id="camposVenda">
         <label for="codigo" id="labelCodigo"><b>Código do Produto</b></label>
-        <input type="text" class="form-control" placeholder="Insira cód. produto da venda" id="codigo" required>
+        <input type="text" class="form-control codigo" placeholder="Insira cód. produto da venda" id="codigo" required>
         <p>
             <label for="quantidade"><b>Quantidade</b></label>
-            <input type="number" class="form-control" placeholder="Insira a quantidade vendida" id="quantidade" required>
+            <input type="number" class="form-control quantidade" placeholder="Insira a quantidade vendida" id="quantidade" required>
         </p>
-        
-        <button onclick="vender()" class="btn btn-primary" id="btnVenda" type="submit">Gravar Venda</button>
+        </div>
     </div>
-        <script type="text/javaScript" src="./scriptEstoque.js"></script>
+    <div class="container">
+        <button onclick="vender()" class="btn btn-primary" id="btnVenda">Gravar Venda</button>
+    </div>
+
+
+        <script type="text/javaScript" src="./scriptVenda.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
     integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
     crossorigin="anonymous"></script>
