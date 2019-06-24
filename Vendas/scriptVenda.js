@@ -18,15 +18,17 @@ function vender() {
     setCodigoQuantidade();
     let novaVenda = new Venda(funcionario, cliente, codigo, itemArray, itemQuantidades, new Date());
     if (localStorage.getItem("vendas")) {
-      let arrayVenda = JSON.parse(localStorage.getItem("vendas"));
-      arrayVenda.push(novaVenda);
-      localStorage.setItem("vendas", JSON.stringify(arrayVenda));
+      let arrayVenda = new Array();
+      arrayVenda[0] = localStorage.getItem("vendas");
+      console.log("true");
+      arrayVenda.push(JSON.stringify(novaVenda));
+      localStorage.setItem("vendas", arrayVenda);      
     }
     else {
-      let arrayVenda = [];
-      arrayVenda.push(novaVenda);
-      localStorage.setItem("vendas", JSON.stringify(arrayVenda))
-    }
+      let arrayVenda = new Array();
+      arrayVenda.push(JSON.stringify(novaVenda));
+      localStorage.setItem("vendas", arrayVenda)
+    } 
   }
 
   function setCodigoQuantidade() {

@@ -16,22 +16,22 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto" style="margin: auto;">
         <li class="nav-item active">
-          <a class="nav-link" href="../index.html">Pagina inicial<span class="sr-only">(current)</span></a>
+          <a class="nav-link" href="../index.html">Pagina Inicial<span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item active">
+          <div class="nav-item active">
+            <a class="nav-link" href="../Estoque/estoque.html">Estoque</a>
+          </div>
         </li>
         <li class="nav-item active">
           <a class="nav-link" href="../Vendas/Vendas.html">Vendas</a>
         </li>
         <li class="nav-item active">
-          <a class="nav-link" href="../Funcionario/func.html">Cadastro de funcionarios</a>
+          <a class="nav-link" href="../Funcionario/func.html">Cadastro de Funcionários</a>
         </li>
         <li class="nav-item active">
           <div class="nav-item active">
-            <a class="nav-link" href="../Cliente/cliente.html">Cadastro de clientes</a>
-          </div>
-        </li>
-        <li class="nav-item active">
-          <div class="nav-item active">
-            <a class="nav-link" href="../Estoque/estoque.html">Estoque</a>
+            <a class="nav-link" href="../Cliente/cliente.html">Cadastro de Clientes</a>
           </div>
         </li>
         <li class="nav-item dropdown">
@@ -40,9 +40,9 @@
             Consultas
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" href="../Estoque/consultaEstoque.html">Tabela de Produtos</a>
-            <a class="dropdown-item" href="#">Clientes Cadastrados</a>
-            <a class="dropdown-item" href="#">Vendedores</a>
+            <a class="dropdown-item" href="../Estoque/consultaEstoque.html">Consulta Estoque</a>
+            <a class="dropdown-item" href="../Cliente/consultaClientes.html">Clientes Cadastrados</a>
+            <a class="dropdown-item" href="../Funcionario/consultaFunc.html">Funcionários Cadastrados</a>
           </div>
 
       </ul>
@@ -50,25 +50,24 @@
   </nav>
   <div class="jumbotron jumbotron fluid">
     <div class="container">
-      <h1 class="display-4">Relatório de Vendas<img src="../logo1.png" height="150" width="150"
-          style="position: relative; left:50%;right:0%" /></h1>
-      <p class="lead">Relatório mensal de vendas</p>
+      <h1 class="display-4">Relatório de Vendas</h1>
       <hr>
-
-      <div class="jumbotron jumbotron fluid">
+  </div>
+</div>
+    <div class="container">
         <table id="tabelaRelatorio" class="table" style="position: center; top:400px;right:0px">
           <thead class="thead-dark">
             <th style="border: 1px solid black">Nome do vendedor</th>
-            <th style="border: 1px solid black">Numero de vendas</th>
+            <th style="border: 1px solid black">Quantidade</th>
             <th style="border: 1px solid black">Faturamento</th>
-            <th style="border: 1px solid black">Mês</th>
+            <th style="border: 1px solid black">Data</th>
           </thead>
         </table>
 
         <div class="container">
           <div class="d-flex justify-content-center" style="position:absolute;top:550px;right:600px">
             <div class="form-group">
-              <Button type="button" class="btn btn-secondary">Imprimir relatorio</Button>
+              <Button type="button" class="btn btn-primary btn-lg">Imprimir Relatório</Button>
             </div>
           </div>
 
