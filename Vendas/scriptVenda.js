@@ -19,7 +19,8 @@ function vender() {
     let novaVenda = new Venda(funcionario, cliente, codigo, itemArray, itemQuantidades, new Date());
     if (localStorage.getItem("vendas")) {
       let arrayVenda = new Array();
-      arrayVenda.push(localStorage.getItem("vendas"));
+      arrayVenda[0] = localStorage.getItem("vendas");
+      console.log("true");
       arrayVenda.push(JSON.stringify(novaVenda));
       localStorage.setItem("vendas", arrayVenda);      
     }
