@@ -2,102 +2,90 @@
 <meta charset=utf-8>
 
 
-    <title>Venda</title>
+<title>Venda</title>
+
 <head>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
 
 <body style="background-color: slategray">
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav mr-auto" style="margin: auto;">
-            <li class="nav-item active">
-              <a class="nav-link" href="../index.html">Pagina inicial<span class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item active">
-              <a class="nav-link" href="../Estoque/estoque.html">Estoque</a>
-            </li>
-            <li class="nav-item active">
-              <a class="nav-link" href="../Funcionario/func.html">Cadastro de funcionarios</a>
-            </li>
-            <li class="nav-item active">
-              <div class="nav-item active">
-                  <a class="nav-link" href="../Cliente/cliente.html">Cadastro de clientes</a>
-              </div>
-            </li>
-            <li class="nav-item active">
-              <div class="nav-item active">
-                  <a class="nav-link" href="../Relatorio/Relatorio.html">Relatorio de vendas</a>
-              </div>
-            </li>
-              <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Consultas
-                </a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <a class="dropdown-item" href="../Estoque/consultaEstoque.html">Tabela de Produtos</a>
-                  <a class="dropdown-item" href="#">Clientes Cadastrados</a>
-                  <a class="dropdown-item" href="#">Vendedores</a>
-                </div>
-            
-              </ul>
-        </div>
-    </nav>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto" style="margin: auto;">
+        <li class="nav-item active">
+          <a class="nav-link" href="../index.html">Pagina inicial<span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" href="../Estoque/estoque.html">Estoque</a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" href="../Funcionario/func.html">Cadastro de funcionarios</a>
+        </li>
+        <li class="nav-item active">
+          <div class="nav-item active">
+            <a class="nav-link" href="../Cliente/cliente.html">Cadastro de clientes</a>
+          </div>
+        </li>
+        <li class="nav-item active">
+          <div class="nav-item active">
+            <a class="nav-link" href="../Relatorio/Relatorio.html">Relatorio de vendas</a>
+          </div>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">
+            Consultas
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="../Estoque/consultaEstoque.html">Tabela de Produtos</a>
+            <a class="dropdown-item" href="#">Clientes Cadastrados</a>
+            <a class="dropdown-item" href="#">Vendedores</a>
+          </div>
 
-    <div class="jumbotron jumbotron-fluid">
-      <div class="container">
-        <h1 class="display-4">Vendas</h1>
-        <hr class="my-4">
-        <p class="lead">Cadastro de nova venda</p>
-      </div>
+      </ul>
     </div>
-    
+  </nav>
+
+  <div class="jumbotron jumbotron-fluid">
     <div class="container">
-      <div class="form-group">
-          <label for="codFuncionario"><b>Código do Funcionário</b></label>
-          <input type="text" class="form-control" placeholder="Insira código do funcionário" id="codFuncionario" required>
-
-          <label for="nomeCliente"><b>Nome do Cliente</b></label>
-          <input type="text" class="form-control" placeholder="Insira nome do cliente (opcional)" id="nomeCliente">
-<br>
-          <button onclick="adicionaCampos()" class="btn btn-sm btn-primary"><b>Adicionar campos de venda</b></button>
-      </div>
+      <h1 class="display-4">Vendas</h1>
+      <hr class="my-4">
+      <p class="lead">Cadastro de nova venda</p>
     </div>
+  </div>
 
-    <hr>
+  <div class="container">
+    <div class="form-group">
+      <label for="codFuncionario"><b>Código do Funcionário</b></label>
+      <input type="text" class="form-control" placeholder="Insira código do funcionário" id="codFuncionario" required>
 
-    <div class="container" id="containerCampos">
-        <div class="form-group" id="camposVenda">
-        <label for="codigo" id="labelCodigo"><b>Código do Produto</b></label>
-        <input type="text" class="form-control codigo" placeholder="Insira cód. produto da venda" id="codigo" required>
-        <p>
-            <label for="quantidade"><b>Quantidade</b></label>
-            <input type="number" class="form-control quantidade" placeholder="Insira a quantidade vendida" id="quantidade" required>
-        </p>
-        </div>
+      <label for="nomeCliente"><b>Nome do Cliente</b></label>
+      <input type="text" class="form-control" placeholder="Insira nome do cliente (opcional)" id="nomeCliente">
+      <br>
+      <button onclick="adicionaCampos()" class="btn btn-sm btn-primary"><b>Adicionar campos de venda</b></button>
     </div>
-    <div class="container">
-        <button onclick="vender()" class="btn btn-primary" id="btnVenda">Gravar Venda</button>
-    </div>
+  </div>
 
+  <hr>
+
+  <div class="container" id="containerCampos">
+    <div class="form-group" id="camposVenda">
+      <label for="codigo" id="labelCodigo"><b>Código do Produto</b></label>
+      <input type="text" class="form-control codigo" placeholder="Insira cód. produto da venda" id="codigo" required>
+      <p>
+        <label for="quantidade"><b>Quantidade</b></label>
+        <input type="number" class="form-control quantidade" placeholder="Insira a quantidade vendida" id="quantidade"
+          required>
+      </p>
+    </div>
+  </div>
+  <div class="container">
+    <button onclick="vender()" class="btn btn-primary" id="btnVenda">Gravar Venda</button>
+  </div>
 
         <script type="text/javaScript" src="./scriptVenda.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-    crossorigin="anonymous"></script>
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-    crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-    crossorigin="anonymous"></script>
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-    crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-    crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-    crossorigin="anonymous"></script>
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 </body>
