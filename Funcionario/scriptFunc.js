@@ -7,15 +7,21 @@ function Funcionario(nome, cod, cargo, admissao){
 
 function gravar(){
   getElementsHTML();
-  const novoFunc = new Funcionario (nome, codigo, cargo, admissao);
-  const funcJSON = JSON.stringify(novoFunc);
-  sessionStorage.setItem("f" + novoFunc.cod, funcJSON);
+  const novoFunc = new Funcionario (nome.value, codigo.value, cargo.value, admissao.value);
+  const funcJSON = novoFunc;
+  sessionStorage.setItem("f" + novoFunc.cod, JSON.stringify(funcJSON));
+  nome.value = null;
+  codigo.value = null;
+  cargo.value = null;
+  admissao.value = null;
+  alert("Salvo com sucesso!");
+
 
   function getElementsHTML() {
-    const nome = document.getElementById("nome").value,
-    codigo = document.getElementById("codigo").value,
-    cargo = document.getElementById("cargo").value,
-    admissao = document.getElementById("admissao").value;
+    const nome = document.getElementById("nome"),
+    codigo = document.getElementById("codigo"),
+    cargo = document.getElementById("cargo"),
+    admissao = document.getElementById("admissao");
   }
 };
 
