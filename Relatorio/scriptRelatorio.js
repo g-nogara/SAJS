@@ -4,20 +4,26 @@ function insereItens() {
     if (!(localStorage.getItem("vendas"))) alert("Sem vendas para relatar!")
 
     else {
-        const vendas = localStorage.getItem("vendas");
+        const vendas = JSON.parse(localStorage.getItem("vendas"));
         for (i = 0; i < vendas.length; i++) {
-            // let venda = JSON.parse(vendas[i]);
-            console.log(vendas);
             let { cell0, cell1, cell2, cell3 } = elementosTabela();
-            insereValoresTabela(vendas, cell0, cell1, cell2, cell3);
+            insereValoresTabela(vendas[i], cell0, cell1, cell2, cell3);
         }
     }
 
-    function insereValoresTabela(vendas, cell0, cell1, cell2, cell3) {
-        cell0.innerHTML = vendas.funcionario;
-        cell1.innerHTML = vendas.cliente;
-        cell2.innerHTML = vendas.data;
-        cell3.innerHTML = vendas.describe;
+    function insereValoresTabela(venda, cell0, cell1, cell2, cell3) {
+        let funcionario = String(venda.funcionario);
+        funcionario = funcionario.padStart(3, "0");
+        funcionario = "f" + funcionario;
+        funcionario = JSON.parse(sessionStorage.getItem(funcionario));
+        cell0.innerHTML = funcionario.nome;
+        cell1.innerHTML = venda.quantidade;
+        cell2.innerHTML = "xD";
+        let data = venda.data;
+        data.toString();
+        data = data.substring(0,10);
+        console.log(data);
+        cell3.innerHTML = data;
     }
 
     function elementosTabela() {
