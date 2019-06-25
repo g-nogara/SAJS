@@ -19,6 +19,7 @@ function gravar(){
   quantidade.value = null;
   valor.value = null;
   describe.value = null;
+  alert("Salvo com sucesso!");
 };
 
 function recuperarItem(){
