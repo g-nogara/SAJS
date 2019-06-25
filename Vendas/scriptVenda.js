@@ -22,15 +22,15 @@ function vender() {
       arrayVenda[0] = localStorage.getItem("vendas");
       console.log("true");
       arrayVenda.push(JSON.stringify(novaVenda));
-      localStorage.setItem("vendas", arrayVenda);      
+      localStorage.setItem("vendas", arrayVenda);
     }
     else {
       let arrayVenda = new Array();
       arrayVenda.push(JSON.stringify(novaVenda));
       localStorage.setItem("vendas", arrayVenda)
-    } 
+    }
   }
-
+  
   function setCodigoQuantidade() {
     for (i = 0; i < codigo.length; i++) {
       codigo[i] = String(codigo[i].value);

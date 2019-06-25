@@ -5,9 +5,9 @@ function Item(codig, quantidade, valor, describe){
     this.describe = describe;
 }
 function getElements() {
-  var codigo = document.getElementById("codigo"), 
-  quantidade = document.getElementById("quantidade"), 
-  valor = document.getElementById("valor"), 
+  var codigo = document.getElementById("codigo"),
+  quantidade = document.getElementById("quantidade"),
+  valor = document.getElementById("valor"),
   describe = document.getElementById("describe");
 }
 function gravar(){
@@ -15,6 +15,10 @@ function gravar(){
   const novoItem = new Item(codigo.value, quantidade.value, valor.value, describe.value);
   const itemJSON = JSON.stringify(novoItem);
   localStorage.setItem("e" + novoItem.codigo, itemJSON);
+  codigo.value = null;
+  quantidade.value = null;
+  valor.value = null;
+  describe.value = null;
 };
 
 function recuperarItem(){

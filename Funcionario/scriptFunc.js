@@ -11,7 +11,6 @@ function gravar(){
   const funcJSON = JSON.stringify(novoFunc);
   sessionStorage.setItem("f" + novoFunc.cod, funcJSON);
 
-
   function getElementsHTML() {
     const nome = document.getElementById("nome").value,
     codigo = document.getElementById("codigo").value,
