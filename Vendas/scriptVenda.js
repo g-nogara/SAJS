@@ -1,10 +1,12 @@
-function Venda(funcionario, cliente, codigo, itens, quantidade, data){
+function Venda(funcionario, cliente, codigo, itens, quantidade, data, total, nfe){
     this.funcionario = funcionario;
     this.cliente = null || cliente;
     this.codigo = codigo;
     this.itens = itens;
     this.quantidade = quantidade;
     this.data = data;
+    this.total = total;
+    this.nfe = nfe;
 }
 
 function vender() {
@@ -16,21 +18,31 @@ function vender() {
     codigo = Array.from(codigo);
     quantidade = Array.from(quantidade);
     setCodigoQuantidade();
-    let novaVenda = new Venda(funcionario, cliente, codigo, itemArray, itemQuantidades, new Date());
+    let  valorTotal = 0;
+    codigo.forEach((codigo,index) => {
+      item = JSON.parse(localStorage.getItem(codigo));
+      valorTotal += item.valor * quantidade[index].value;
+
+      item.quantidade = parseInt(item.quantidade);
+      item.quantidade += -(quantidade[index].value);
+      localStorage.setItem(codigo, JSON.stringify(item));
+
+      notaFiscal = gerarCodigo();
+    })
+    let novaVenda = new Venda(funcionario, cliente, codigo, itemArray, itemQuantidades, new Date(), valorTotal, notaFiscal);
     if (localStorage.getItem("vendas")) {
-      let arrayVenda = new Array();
-      arrayVenda[0] = localStorage.getItem("vendas");
-      console.log("true");
-      arrayVenda.push(JSON.stringify(novaVenda));
-      localStorage.setItem("vendas", arrayVenda);
+      let arrayVenda = JSON.parse(localStorage.getItem("vendas"));
+      arrayVenda.push(novaVenda);
+      localStorage.setItem("vendas", JSON.stringify(arrayVenda));
     }
     else {
-      let arrayVenda = new Array();
-      arrayVenda.push(JSON.stringify(novaVenda));
-      localStorage.setItem("vendas", arrayVenda)
+      let arrayVenda = [];
+      arrayVenda.push(novaVenda);
+      localStorage.setItem("vendas", JSON.stringify(arrayVenda))
     }
+    alert("Venda realizada com sucesso!\n\nValor Total: R$ "+valorTotal+"\nNota Fiscal: "+notaFiscal);
   }
-  
+
   function setCodigoQuantidade() {
     for (i = 0; i < codigo.length; i++) {
       codigo[i] = String(codigo[i].value);
@@ -53,4 +65,21 @@ function adicionaCampos() {
   cloneCampos = formCampos.cloneNode(true);
   containerCampos = document.getElementById("containerCampos");
   containerCampos.appendChild(cloneCampos);
+}
+
+var sorteados = [];
+var valorMaximo = 100000000;
+var codigo= 0;
+
+function gerarCodigo() {
+    if (sorteados.length == valorMaximo) {
+        if (confirm('Já não há mais! Quer recomeçar?')) sorteados = [];
+        else return;
+    }
+    codigo = Math.ceil(Math.random() * valorMaximo);
+    while (sorteados.indexOf(codigo) >= 0) {
+        codigo = Math.ceil(Math.random() * valorMaximo);
+    }
+    sorteados.push(codigo);
+    return codigo;
 }

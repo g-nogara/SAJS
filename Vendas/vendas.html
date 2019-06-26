@@ -20,7 +20,7 @@
           <a class="nav-link" href="../Estoque/estoque.html">Estoque</a>
         </li>
         <li class="nav-item active">
-          <a class="nav-link" href="../Funcionario/func.html">Cadastro de Funcionários</a>
+          <a class="nav-link" href="../login/form.html">Cadastro de Funcionários</a>
         </li>
         <li class="nav-item active">
           <div class="nav-item active">
@@ -40,9 +40,9 @@
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
             <a class="dropdown-item" href="../Estoque/consultaEstoque.html">Consulta Estoque</a>
             <a class="dropdown-item" href="../Cliente/consultaClientes.html">Clientes Cadastrados</a>
-            <a class="dropdown-item" href="../Funcionario/consultaFunc.html">Funcionários Cadastrados</a>
+            <a class="dropdown-item" href="../login/form.html">Funcionários Cadastrados</a>
           </div>
-
+        </li>
       </ul>
     </div>
   </nav>
@@ -63,7 +63,6 @@
       <label for="nomeCliente"><b>Nome do Cliente</b></label>
       <input type="text" class="form-control" placeholder="Insira nome do cliente (opcional)" id="nomeCliente">
       <br>
-      <button onclick="adicionaCampos()" class="btn btn-sm btn-primary"><b>Adicionar campos de venda</b></button>
     </div>
   </div>
 
@@ -71,6 +70,7 @@
 
   <div class="container" id="containerCampos">
     <div class="form-group" id="camposVenda">
+      <button onclick="adicionaCampos()" class="btn btn-sm btn-primary"><b>Adicionar campos de venda</b></button></br></br>
       <label for="codigo" id="labelCodigo"><b>Código do Produto</b></label>
       <input type="text" class="form-control codigo" placeholder="Insira cód. produto da venda" id="codigo" required>
       <p>
