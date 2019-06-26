@@ -9,7 +9,7 @@ function gravar(){
   getElementsHTML();
   const novoFunc = new Funcionario (nome.value, codigo.value, cargo.value, admissao.value);
   const funcJSON = novoFunc;
-  sessionStorage.setItem("f" + novoFunc.cod, JSON.stringify(funcJSON));
+  localStorage.setItem("f" + novoFunc.cod, JSON.stringify(funcJSON));
   nome.value = null;
   codigo.value = null;
   cargo.value = null;
@@ -26,7 +26,7 @@ function gravar(){
 };
 
 function recuperar(){
-  const ojb = sessionStorage.getItem(parseInt(prompt("Informe o código do produto")));
+  const ojb = localStorage.getItem(parseInt(prompt("Informe o código do produto")));
   console.log(JSON.parse(ojb));
   document.getElementById("exibir").innerHTML+= ojb;
 
