@@ -27,7 +27,7 @@ function vender() {
       item.quantidade += -(quantidade[index].value);
       localStorage.setItem(codigo, JSON.stringify(item));
 
-      notaFiscal = Math.random().toFixed(8).substring(2);
+      notaFiscal = gerarCodigo();
     })
     let novaVenda = new Venda(funcionario, cliente, codigo, itemArray, itemQuantidades, new Date(), valorTotal, notaFiscal);
     if (localStorage.getItem("vendas")) {
@@ -40,9 +40,9 @@ function vender() {
       arrayVenda.push(novaVenda);
       localStorage.setItem("vendas", JSON.stringify(arrayVenda))
     }
-      alert("Salvo com sucesso!");
+    alert("Venda realizada com sucesso!\n\nValor Total: R$ "+valorTotal+"\nNota Fiscal: "+notaFiscal);
   }
-  
+
   function setCodigoQuantidade() {
     for (i = 0; i < codigo.length; i++) {
       codigo[i] = String(codigo[i].value);
@@ -65,4 +65,21 @@ function adicionaCampos() {
   cloneCampos = formCampos.cloneNode(true);
   containerCampos = document.getElementById("containerCampos");
   containerCampos.appendChild(cloneCampos);
+}
+
+var sorteados = [];
+var valorMaximo = 100000000;
+var codigo= 0;
+
+function gerarCodigo() {
+    if (sorteados.length == valorMaximo) {
+        if (confirm('Já não há mais! Quer recomeçar?')) sorteados = [];
+        else return;
+    }
+    codigo = Math.ceil(Math.random() * valorMaximo);
+    while (sorteados.indexOf(codigo) >= 0) {
+        codigo = Math.ceil(Math.random() * valorMaximo);
+    }
+    sorteados.push(codigo);
+    return codigo;
 }

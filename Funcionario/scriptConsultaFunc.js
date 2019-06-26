@@ -1,45 +1,45 @@
 function deletaItem(key){
     key = String(key);
     key = key.padStart(3,"0");
-    key = "e" + key;
-    let confirma = prompt("Tem certeza que deseja deletar? \nInforme o código do item para confirmar");
-    confirma = "e" + confirma;
+    key = "f" + key;
+    let confirma = prompt("Tem certeza que deseja deletar? \nInforme o código do funcionário para confirmar");
+    confirma = "f" + confirma;
     console.log(key + " confirma:" + confirma);
     if (confirma === key){
         localStorage.removeItem(key);
-        alert("Item deletado com sucesso");
+        alert("Funcionário deletado com sucesso");
         location.reload();
-    } else alert("Item não removido")
+    } else alert("Funcionário não removido")
 
 }
 
 function atualizaItem(key){
     key = String(key);
     key = key.padStart(3,"0");
-    key = "e" + key;
+    key = "f" + key;
     itemAtualizado = JSON.parse(localStorage.getItem(key));
-    itemAtualizado.valor = parseFloat(prompt("Informe novo valor"));
-    itemAtualizado.quantidade = parseInt(prompt("Informe nova quantidade"));
-    itemAtualizado.describe = prompt("Informe nova descrição");
+    itemAtualizado.cargo = prompt("Informe o novo cargo");
     localStorage.setItem(key,JSON.stringify(itemAtualizado));
     location.reload();
 }
 
 function insereItens() {
     let { table, buttonUpdate, buttonDelete } = criaElementosHTML();
-
-    if(localStorage.length === 0) alert("Sem itens em estoque!")
-    else for (i=0; i<localStorage.length; i++){
-        let itemEstoque = JSON.parse(localStorage.getItem(localStorage.key(i)));
-        let { cell0, cell1, cell2, cell3, cell4, cell5 } = elementosTabela();
-        insereValoresTabela(itemEstoque, cell0, cell1, cell2, cell3, cell4, cell5);
+    console.log(localStorage.key(i).charAt(0));
+    if(localStorage.length === 0) alert("Sem funcionários cadastrados!")
+    else for (var i=0; i<localStorage.length; i++){
+        if(localStorage.key(i).charAt(0)=="f"){
+            let itemEstoque = JSON.parse(localStorage.getItem(localStorage.key(i)));
+            let { cell0, cell1, cell2, cell3, cell4, cell5 } = elementosTabela();
+            insereValoresTabela(itemEstoque, cell0, cell1, cell2, cell3, cell4, cell5);
+        }
     }
 
     function insereValoresTabela(itemEstoque, cell0, cell1, cell2, cell3, cell4, cell5) {
-        cell0.innerHTML = itemEstoque.codigo;
-        cell1.innerHTML = itemEstoque.valor;
-        cell2.innerHTML = itemEstoque.quantidade;
-        cell3.innerHTML = itemEstoque.describe;
+        cell0.innerHTML = itemEstoque.nome;
+        cell1.innerHTML = itemEstoque.codigo;
+        cell2.innerHTML = itemEstoque.cargo;
+        cell3.innerHTML = itemEstoque.admissao;
         buttonUpdate.setAttribute("onclick", "atualizaItem(" + itemEstoque.codigo + ")")
         cell4.append(buttonUpdate);
         cell4.innerHTML +="";
@@ -60,7 +60,7 @@ function insereItens() {
     }
 
     function criaElementosHTML() {
-        let table = document.getElementById("tabelaEstoque");
+        let table = document.getElementById("tabelaFunc");
         let onClickDelete = document.createAttribute("onclick");
 
         let buttonDelete = document.createElement("button");
