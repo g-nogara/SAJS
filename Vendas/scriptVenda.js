@@ -1,10 +1,11 @@
-function Venda(funcionario, cliente, codigo, itens, quantidade, data){
+function Venda(funcionario, cliente, codigo, itens, quantidade, data, total){
     this.funcionario = funcionario;
     this.cliente = null || cliente;
     this.codigo = codigo;
     this.itens = itens;
     this.quantidade = quantidade;
     this.data = data;
+    this.total = total;
 }
 
 function vender() {
@@ -16,7 +17,14 @@ function vender() {
     codigo = Array.from(codigo);
     quantidade = Array.from(quantidade);
     setCodigoQuantidade();
-    let novaVenda = new Venda(funcionario, cliente, codigo, itemArray, itemQuantidades, new Date());
+    let  valorTotal = 0;
+    codigo.forEach((element,index) => {
+      item = JSON.parse(localStorage.getItem(element));
+      console.log(item.valor);
+      console.log(quantidade[index].value);
+      valorTotal += item.valor * quantidade[index].value;
+    })
+    let novaVenda = new Venda(funcionario, cliente, codigo, itemArray, itemQuantidades, new Date(), valorTotal);
     if (localStorage.getItem("vendas")) {
       let arrayVenda = JSON.parse(localStorage.getItem("vendas"));
       arrayVenda.push(novaVenda);
