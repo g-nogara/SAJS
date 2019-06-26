@@ -1,6 +1,6 @@
 function deletaItem(key){
     key = String(key);
-    key = key.padStart(3,"0");
+    key = key.padStart(6,"0");
     key = "f" + key;
     let confirma = prompt("Tem certeza que deseja deletar? \nInforme o código do funcionário para confirmar");
     confirma = "f" + confirma;
@@ -15,7 +15,7 @@ function deletaItem(key){
 
 function atualizaItem(key){
     key = String(key);
-    key = key.padStart(3,"0");
+    key = key.padStart(6,"0");
     key = "f" + key;
     itemAtualizado = JSON.parse(localStorage.getItem(key));
     itemAtualizado.cargo = prompt("Informe o novo cargo");
