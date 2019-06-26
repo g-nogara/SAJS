@@ -1,4 +1,4 @@
-function Venda(funcionario, cliente, codigo, itens, quantidade, data, total){
+function Venda(funcionario, cliente, codigo, itens, quantidade, data, total, nfe){
     this.funcionario = funcionario;
     this.cliente = null || cliente;
     this.codigo = codigo;
@@ -6,6 +6,7 @@ function Venda(funcionario, cliente, codigo, itens, quantidade, data, total){
     this.quantidade = quantidade;
     this.data = data;
     this.total = total;
+    this.nfe = nfe;
 }
 
 function vender() {
@@ -23,8 +24,9 @@ function vender() {
       console.log(item.valor);
       console.log(quantidade[index].value);
       valorTotal += item.valor * quantidade[index].value;
+      notaFiscal = Math.random().toFixed(8).substring(2);
     })
-    let novaVenda = new Venda(funcionario, cliente, codigo, itemArray, itemQuantidades, new Date(), valorTotal);
+    let novaVenda = new Venda(funcionario, cliente, codigo, itemArray, itemQuantidades, new Date(), valorTotal, notaFiscal);
     if (localStorage.getItem("vendas")) {
       let arrayVenda = JSON.parse(localStorage.getItem("vendas"));
       arrayVenda.push(novaVenda);
