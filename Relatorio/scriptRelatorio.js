@@ -15,7 +15,7 @@ function insereItens() {
         let funcionario = String(venda.funcionario);
         funcionario = funcionario.padStart(3, "0");
         funcionario = "f" + funcionario;
-        funcionario = JSON.parse(sessionStorage.getItem(funcionario));
+        funcionario = JSON.parse(localStorage.getItem(funcionario));
         cell1.innerHTML = funcionario.codigo;
         cell2.innerHTML = venda.nome;
         cell3.innerHTML = venda.quantidade;
