@@ -17,7 +17,7 @@ function insereItens() {
         funcionario = "f" + funcionario;
         funcionario = JSON.parse(localStorage.getItem(funcionario));
         cell1.innerHTML = funcionario.codigo;
-        cell2.innerHTML = venda.nome;
+        cell2.innerHTML = venda.cliente;
         cell3.innerHTML = venda.quantidade;
         cell4.innerHTML = venda.total;
         cell5.innerHTML = venda.nfe;
