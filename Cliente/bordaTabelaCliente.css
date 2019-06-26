@@ -1,0 +1,12 @@
+#tabelaClientes{
+    font-family: "Lucida Console", Monaco, monospace;
+}
+
+#tabelaClientes td, #tabelaClientes th {
+    border: 1px solid rgb(0, 0, 0);
+    padding: 6px;
+  }
+
+  #tabelaClientes tr{background-color: #ffff;}
+
+  #tabelaClientes tr:hover {background-color: rgba(103, 225, 255, 0.555);}

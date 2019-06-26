@@ -1,4 +1,5 @@
-function Funcionario(nomeCliente, endereço, numTel, email){
+function Cliente(codigoCliente, nomeCliente, endereço, numTel, email){
+    this.codigoCliente = codigoCliente;
     this.nomeCliente = nomeCliente;
     this.endereço = endereço;
     this.numTel = numTel;
@@ -7,9 +8,10 @@ function Funcionario(nomeCliente, endereço, numTel, email){
 
 function salvarCliente(){
   getElementsHTML();
-  const novoCliente = new Funcionario (nomeCliente.value, endereço.value, numTel.value, email.value);
+  let codigoCliente = Math.random().toFixed(6).toString().substring(2);
+  const novoCliente = new Cliente (codigoCliente, nomeCliente.value, endereço.value, numTel.value, email.value);
   const clienteJSON = JSON.stringify(novoCliente);
-  localStorage.setItem("c" + novoCliente.numTel, clienteJSON);
+  localStorage.setItem("c" + novoCliente.codigoCliente, clienteJSON);
   nomeCliente.value = null;
   endereço.value = null;
   numTel.value = null;
@@ -23,14 +25,4 @@ function salvarCliente(){
     numTel = document.getElementById("numTel"),
     email = document.getElementById("email");
   }
-};
-
-function recuperar(){
-  const ojb = localStorage.getItem(parseInt(prompt("Informe o nome do cliente")));
-  console.log(JSON.parse(ojb));
-  document.getElementById("exibir").innerHTML+= ojb;
-  nomeCliente.value = item.nomeCliente;
-  endereço.value = item.endereço;
-  numTel.value = item.numTel;
-  email.value = item.email;
 };

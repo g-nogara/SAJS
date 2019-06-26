@@ -1,0 +1,12 @@
+#tabelaFunc{
+    font-family: "Lucida Console", Monaco, monospace;
+}
+
+#tabelaFunc td, #tabelaFunc th {
+    border: 1px solid rgb(0, 0, 0);
+    padding: 6px;
+  }
+
+  #tabelaFunc tr{background-color: #ffff;}
+
+  #tabelaFunc tr:hover {background-color: rgba(103, 225, 255, 0.555);}
