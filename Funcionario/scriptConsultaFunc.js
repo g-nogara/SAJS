@@ -25,7 +25,7 @@ function atualizaItem(key){
 
 function insereItens() {
     let { table, buttonUpdate, buttonDelete } = criaElementosHTML();
-    console.log(localStorage.key(i).charAt(0));
+    
     if(localStorage.length === 0) alert("Sem funcionários cadastrados!")
     else for (var i=0; i<localStorage.length; i++){
         if(localStorage.key(i).charAt(0)=="f"){
@@ -36,10 +36,10 @@ function insereItens() {
     }
 
     function insereValoresTabela(itemEstoque, cell0, cell1, cell2, cell3, cell4, cell5) {
-        cell0.innerHTML = itemEstoque.nome;
-        cell1.innerHTML = itemEstoque.codigo;
+        cell0.innerHTML = itemEstoque.codigo;
+        cell1.innerHTML = itemEstoque.nome;
         cell2.innerHTML = itemEstoque.cargo;
-        cell3.innerHTML = itemEstoque.admissao;
+        cell3.innerHTML = itemEstoque.dataAdmissao;
         buttonUpdate.setAttribute("onclick", "atualizaItem(" + itemEstoque.codigo + ")")
         cell4.append(buttonUpdate);
         cell4.innerHTML +="";

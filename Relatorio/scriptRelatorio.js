@@ -6,7 +6,7 @@ function insereItens() {
     else {
         const vendas = JSON.parse(localStorage.getItem("vendas"));
         for (i = 0; i < vendas.length; i++) {
-            let { cell0, cell1, cell2, cell3 } = elementosTabela();
+            let { cell0, cell1, cell2, cell3, cell4, cell5 } = elementosTabela();
             insereValoresTabela(vendas[i], cell0, cell1, cell2, cell3, cell4, cell5);
         }
     }

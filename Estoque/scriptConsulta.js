@@ -30,9 +30,11 @@ function insereItens() {
 
     if(localStorage.length === 0) alert("Sem itens em estoque!")
     else for (i=0; i<localStorage.length; i++){
-        let itemEstoque = JSON.parse(localStorage.getItem(localStorage.key(i)));
-        let { cell0, cell1, cell2, cell3, cell4, cell5 } = elementosTabela();
-        insereValoresTabela(itemEstoque, cell0, cell1, cell2, cell3, cell4, cell5);
+        if(localStorage.key(i).charAt(0)=="e"){
+            let itemEstoque = JSON.parse(localStorage.getItem(localStorage.key(i)));
+            let { cell0, cell1, cell2, cell3, cell4, cell5 } = elementosTabela();
+            insereValoresTabela(itemEstoque, cell0, cell1, cell2, cell3, cell4, cell5);
+        }
     }
 
     function insereValoresTabela(itemEstoque, cell0, cell1, cell2, cell3, cell4, cell5) {
