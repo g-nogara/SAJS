@@ -19,11 +19,14 @@ function vender() {
     quantidade = Array.from(quantidade);
     setCodigoQuantidade();
     let  valorTotal = 0;
-    codigo.forEach((element,index) => {
-      item = JSON.parse(localStorage.getItem(element));
-      console.log(item.valor);
-      console.log(quantidade[index].value);
+    codigo.forEach((codigo,index) => {
+      item = JSON.parse(localStorage.getItem(codigo));
       valorTotal += item.valor * quantidade[index].value;
+
+      item.quantidade = parseInt(item.quantidade);
+      item.quantidade += -(quantidade[index].value);
+      localStorage.setItem(codigo, JSON.stringify(item));
+
       notaFiscal = Math.random().toFixed(8).substring(2);
     })
     let novaVenda = new Venda(funcionario, cliente, codigo, itemArray, itemQuantidades, new Date(), valorTotal, notaFiscal);
