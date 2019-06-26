@@ -15,10 +15,10 @@ function insereItens() {
         let funcionario = String(venda.funcionario);
         funcionario = funcionario.padStart(3, "0");
         funcionario = "f" + funcionario;
-        funcionario = JSON.parse(sessionStorage.getItem(funcionario));
+        funcionario = JSON.parse(localStorage.getItem(funcionario));
         cell0.innerHTML = funcionario.nome;
         cell1.innerHTML = venda.quantidade;
-        cell2.innerHTML = "xD";
+        cell2.innerHTML = venda.total;
         let data = venda.data;
         data.toString();
         data = data.substring(0,10);
