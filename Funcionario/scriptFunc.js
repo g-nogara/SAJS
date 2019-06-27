@@ -14,7 +14,7 @@ function gravar(){
   nome.value = null;
   cargo.value = null;
   admissao.value = null;
-  alert("Salvo com sucesso! \n O código do funcionário é " + codigo);
+  alert("Salvo com sucesso! \n\nO código do funcionário é " + codigo);
 
 
   function getElementsHTML() {
